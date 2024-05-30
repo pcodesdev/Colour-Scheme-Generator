@@ -28,7 +28,7 @@ select {
   width: 250px;
   padding: 0.5rem;
   font-size: 1.5rem;
-  border: 0;
+  /* border: 0; */
   border-radius: 5px;
   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
     no-repeat right #ddd;
@@ -46,4 +46,51 @@ select {
   font-size: 1rem;
   background-color: #3d4b60;
   color: #fff;
+}
+
+/* ////////////////////////////////////////////////////////main section//////////////////////////////// */
+.colour-section,
+.colour-code-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.colour-1,
+.colour-2,
+.colour-3,
+.colour-4,
+.colour-5 {
+  height: 500px;
+}
+
+.colour-code-1,
+.colour-code-2,
+.colour-code-3,
+.colour-code-4,
+.colour-code-5 {
+  /* height: 50px; */
+  align-self: center; /* Vertically aligns the item */
+  justify-self: center; /* Horizontally aligns the item */
+  margin: 1rem auto;
+  text-transform: uppercase;
+}
+
+.colour-1 {
+  background-color: #26569e;
+}
+
+.colour-2 {
+  background-color: #27581d;
+}
+
+.colour-3 {
+  background-color: #d459af;
+}
+
+.colour-4 {
+  background-color: #e79464;
+}
+
+.colour-5 {
+  background-color: #1ce9cd;
 }
