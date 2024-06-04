@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
 }
@@ -53,6 +53,7 @@ select {
 .colour-code-section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  margin: 1rem 0;
 }
 
 .colour-1,
@@ -61,6 +62,8 @@ select {
 .colour-4,
 .colour-5 {
   height: 500px;
+  margin: 0 0.5rem;
+  border-radius: 4px;
 }
 
 .colour-code-1,
@@ -73,9 +76,10 @@ select {
   justify-self: center; /* Horizontally aligns the item */
   margin: 1rem auto;
   text-transform: uppercase;
+  margin: 1rem 0.5rem;
 }
 
-.colour-1 {
+/* .colour-1 {
   background-color: #26569e;
 }
 
@@ -93,4 +97,4 @@ select {
 
 .colour-5 {
   background-color: #1ce9cd;
-}
+} */

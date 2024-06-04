@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // color generation code
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
   const colorPicker = document.querySelector('input[type="color"]');
   const schemeModeSelector = document.getElementById("schemeModeSelector");
   const generateBtn = document.querySelector(".btn-gen");
@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const colorCodes = document.querySelectorAll(
     ".colour-code-section .colour-code"
   );
+
+
 
   generateBtn.addEventListener("click", () => {
     const selectedColor = colorPicker.value.substring(1); // Remove the '#' character
@@ -41,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         // console.log(data.colors);
         const colors = data.colors;
+        colorDivs.innerHTML = "";
+        colorCodes.innerHTML = "";
         colors.forEach((color, index) => {
           const hexValue = color.hex.value;
           if (colorDivs[index]) {
@@ -53,4 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => console.error("Error fetching color scheme:", error));
   });
-});
+// });
