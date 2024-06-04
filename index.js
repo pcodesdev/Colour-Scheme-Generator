@@ -21,3 +21,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// color generation code
+document.addEventListener("DOMContentLoaded", () => {
+  const colorPicker = document.querySelector('input[type="color"]');
+  const schemeModeSelector = document.getElementById("schemeModeSelector");
+  const generateBtn = document.querySelector(".btn-gen");
+  const colorDivs = document.querySelectorAll(".colour-section div");
+  const colorCodes = document.querySelectorAll(
+    ".colour-code-section .colour-code"
+  );
+
+  generateBtn.addEventListener("click", () => {
+    const selectedColor = colorPicker.value.substring(1); // Remove the '#' character
+    const selectedScheme = schemeModeSelector.value;
+    const apiUrl = `https://www.thecolorapi.com/scheme?hex=${selectedColor}&mode=${selectedScheme}&count=5`;
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data.colors);
+        const colors = data.colors;
+        colors.forEach((color, index) => {
+          const hexValue = color.hex.value;
+          if (colorDivs[index]) {
+            colorDivs[index].style.backgroundColor = hexValue;
+          }
+          if (colorCodes[index]) {
+            colorCodes[index].textContent = hexValue;
+          }
+        });
+      })
+      .catch((error) => console.error("Error fetching color scheme:", error));
+  });
+});
